@@ -1,0 +1,40 @@
+body {
+  padding-left: 15em;
+  padding-top: 2em;                                                                                                 
+  color: White; 
+  background-color: #666666;
+  }
+
+ul.navbar {
+  list-style-type: none;
+  padding-right: 1em;
+  padding-top: 1em;
+  margin: 0;
+  position: absolute;
+  top: 1em;
+  left: 1em;
+  width: 9em                                                                                                        
+} 
+
+h1 {font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif}
+h2 {font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif}
+h3 {font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif}
+
+ul.navbar li { 
+  background: white;
+  margin: 0.5em 0;                                                                                                  
+  padding: 0.3em;
+  border-right: 1em solid purple
+}
+
+ul.navbar a {
+  text-decoration: none 
+} 
+
+a:link {
+  color: purple 
+}
+
+a:visited {
+  color: purple 
+}
