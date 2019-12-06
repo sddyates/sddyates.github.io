@@ -1,0 +1,145 @@
+<!DOCTYPE HTML>
+<!--
+	Strata by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Strata by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+        <link rel="stylesheet" href="assets/css/prism.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<a href="index.html" class="image avatar"><img src="images/avatar_mars.png" alt="" /></a>
+					<h1><strong><a href="https://github.com/sddyates/mars">Mars</a></strong><br />
+                    astrophysical hydrodynamics<br />
+					written in python</h1>
+				</div>
+			</header>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- One -->
+					<section id="mars">
+						<h1><a href="https://github.com/sddyates/mars">Mars</a></h1>
+                        <p>
+                        A hydrodynamic simulation code written in python and designed to be minimalistic and easy to understand but don't take my word for it, ask <a href="https://github.com/tnalpgge/rank-amateur-cowsay">cowsay</a> 🐮💬!
+                        </p>
+<pre><code class="language-c">-----------------------------------------
+/ \\\\\\\\\      /\     |\\\\\ /\\\\\     \
+| ||  ||  \\    //\\    ||  // ||         |
+| ||  ||  ||   //  \\   ||\\\\ \\\\\\     |
+| ||  ||  ||  //\\\\\\  ||  ||     ||     |
+| ||  ||  || //      \\ ||  || \\\\\/ 0.2 |
+\ Its a mooooost have!                    /
+ -----------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||</code></pre>
+                        <p>
+                            <a href="https://github.com/sddyates/mars">Mars</a> can be downloaded from the code repository.
+                        </p>
+                        <p>
+                        Here, have some free space emojis:
+                        🪐🚀🛰️🔭👨‍🚀☀️🌕🌖🌗🌘🌑🌒🌓🌔🌕
+                        </p>
+                        <h2>Why the name "<a href="https://github.com/sddyates/mars">Mars</a>"</h2>
+                        <p>
+                            This name doesn't mean anything, I am just following the trend for codes in astrophysics to be named after Roman/Greek/Egyptian gods. I also quite quite like the name, which is NAATILLO (Not An Acronym Even Though It Looks Like One).
+                        </p>
+                        <p>
+                            <a href="https://github.com/sddyates/mars">Mars</a> is intended to be used for learning and as a test bed for python optimisation via the numpy, numba, cython and scipy modules. <a href="https://github.com/sddyates/mars">Mars</a> is inspired by the code <a href="http://plutocode.ph.unito.it/" style="text-decoration:none">PLUTO</a> and makes use of algorithms from that project.
+                        </p>
+
+                        <p>
+    						<h2>Features</h2>
+    						🪐 1D, 2D and 3D<br />
+    						☀️ 1st and 2nd order accuracy<br />
+    						🔭 Output formats in vtk, hdf5 and npy<br />
+                            🛰️ Restart using hdf5 files<br />
+                            👨‍🚀 User generated problems<br />
+                            🚀 Optimised for speed using numpy and numba
+                        </p>
+
+                        <p>
+                            <h2>Dependencies</h2>
+                            - <a href="https://github.com/python/">Python</a> 3.5 or greater<br />
+                            - <a href="https://github.com/numpy/numpy">Numpy</a><br />
+                            - <a href="https://github.com/numba/numba">Numba</a><br />
+                            - <a href="https://github.com/Kitware/VTK">vtk</a><br />
+                            - <a href="https://github.com/h5py/h5py">h5py</a><br />
+                            - <a href="https://github.com/cython/cython">cython</a> (optional)
+                        </p>
+
+                        <p>
+                            Using <a href="https://www.anaconda.com/distribution/">Anaconda python</a> these dependencies can be installed with the following commands:
+
+<pre><code class="language-c">$ conda create --name mars  # Creates a conda env for mars to run in
+$ conda activate mars
+$ conda install -c anaconda numpy numba h5py cython
+$ conda install -c e3sm evtk</code></pre>
+                        </p>
+
+                        <h2>Running a problem script</h2>
+                        <p>
+                            Running a simulation with <a href="https://github.com/sddyates/mars">Mars</a> is centered around executing a problem script, i.e.
+                        </p>
+
+<pre><code class="language-c">$ python problem.py</code></pre>
+
+                        <p>
+                            A collection of these scripts can be found under 'mars/problems/', they test the code in 1D, 2D and 3D using the reconstruction and Riemann solvers available.
+                        </p>
+                        <p>
+                            <a href="https://github.com/sddyates/mars">Mars</a> is written in python allowing for rich on the fly analysis. This can be done in the `problem.py` file, as part of calling the `main_loop` function.
+                        </p>
+<pre><code class="language-c">if __name__ == "__main__":
+    main_loop(Problem())</code></pre>
+                        <p>
+                            This can be modified to perform batch simulations where simulation parameters are modified per iteration. For example, to perform three simulations concurrently at increasing resolution in the `x1`-direction:
+                        </p>
+<pre><code class="language-c">if __name__ == "__main__":
+    p = Problem()
+    for res in [16, 32, 64]:
+        p.parameter['x1 resolution'] = res
+        main_loop(p)</code></pre>
+                        <p>
+                            Some modifications would also be required to the output file names to prevent overwriting, but the example serves to illustrate the point.
+                        </p>
+                    </section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<ul class="icons">
+						<li><a href="https://github.com/sddyates" class="icon brands fa-github"><span class="label">Github</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; Simon Daley-Yates</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.poptrox.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/prism.min.js"></script>
+
+	</body>
+</html>
