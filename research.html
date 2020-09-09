@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Strata by HTML5 UP</title>
+		<title>SDY - Research</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -19,7 +19,7 @@
 					<a href="index.html" class="image avatar"><img src="images/avatar_me.jpg" alt="" /></a>
 					<h1><strong>Simon Daley-Yates</strong><br />
                     Post-doc researcher<br />
-					Maison de la Simulation, CEA, Paris-Sacley</h1>
+					Maison de la Simulation</h1>
 				</div>
 			</header>
 
@@ -28,6 +28,25 @@
 
 				<!-- One -->
 					<section id="one">
+
+						<ul class="actions">
+              <li>
+                <a class="button primary small fit" href="index.html">Home</a>
+              </li>
+              <li>
+                <a class="button primary small fit" href="cv.html">CV</a>
+              </li>
+              <li>
+                <a class="button primary small fit" href="publications.html">Publications</a>
+              </li>
+              <li>
+                <a class="button primary small fit" href="research.html">Research</a>
+              </li>
+              <li>
+                <a class="button primary small fit" href="climbing.html">Climbing</a>
+              </li>
+            </ul>
+
 						<header class="major">
 							<h1>My Current Research.</h1>
 						</header>
@@ -38,25 +57,12 @@
                         <p>
                             Modern super-computers represent a vast potential tool for testing our understanding of the physical world. They also present a challanging technical problem. Computer programs writting to to executed on these machines need to be efficient, scalable, flexible and at the same time user friendly, extendable and
                         </p>
-
                         <p>
-                            There are many buzz-words used when describing the goal of such programs, e.g. <a href="https://en.wikipedia.org/wiki/Exascale_computing">Exascale</a> or <a href="https://en.wikipedia.org/wiki/Massively_parallel">Massively parallel</a>, but what these essenitally describe is a codes ability to run utilising a large number of threads while at the same time retaining efficient execution, otherwise known as <a href="https://en.wikipedia.org/wiki/Scalability">scalability</a>. This is most commonly achived by designing a code with a hybrid-parallisation scheme. This effectievely attempts to reduce the volume of communications between the distributed memory locations throughout a super-computer by directing the majority via the shared memory within a node.
+                            There are many buzz-words used when describing the goal of such programs, e.g. <a href="https://en.wikipedia.org/wiki/Exascale_computing">Exascale</a> or <a href="https://en.wikipedia.org/wiki/Massively_parallel">Massively parallel</a>, but what these essenitally describe is a codes ability to run utilising a large number of threads while at the same time retaining efficient execution, otherwise known as <a href="https://en.wikipedia.org/wiki/Scalability">scalability</a>. This is most commonly achived by designing a code with a hybrid-parallisation scheme. This effectievely attempts to reduce the volume of communications between the distributed memory locations throughout a super-computer by directing the majority of the communications via the shared memory within a node. Today there exists multiple frameworks for achieving the above goal. My work only makes use of one, the <a href="https://github.com/kokkos/kokkos">the Kokkos framework</a>.
                         </p>
-
-                        <p>
-                            Today there exists multiple frame works for achieving the above goal. My work only makes use of one, the <a href="https://github.com/kokkos/kokkos">the Kokkos framework</a>.
-                        </p>
-
-                        <p>
-                            for if the potiential of this resorce is to be realised, the programs written to run on them need to harness the ...
-                        </p>
-
-                        <p>
-                            Leveraging the computational power of multicore achitectures and accelerators such as GPGPUs is techincally demanding and for Modern astrophysics to make use of them, scientists need to work with experts from both applied maths and computer science communities.
-                        </p>
-                        <p>
-                            relises heavily on the capabilities of these super-computers. As the power of these computers continues to increas, so to does the complexity of the codes written to run on them.
-                        </p>
+						<p>
+							The above image is a rendering of the results of a atmospheric convection simulation. The resoluation of the simulation was 5000<sup>3</sup> grid cells. Each simulation snapshot is 5.2 TB of data. This scale of numerical simulation and data output is not possible without high performace frameworks such as <a href="https://github.com/kokkos/kokkos">Kokkos</a> or <a href="https://en.wikipedia.org/wiki/Big_data">Big Data</a> managment methods.
+						</p>
                     </section>
 
                     <section id="two">
@@ -112,8 +118,7 @@
 			<footer id="footer">
 				<div class="inner">
 					<ul class="icons">
-						<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-						<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+						<li><a href="https://github.com/sddyates" class="icon brands fa-github"><span class="label">Github</span></a></li>
 					</ul>
 					<ul class="copyright">
 						<li>&copy; Simon Daley-Yates</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
