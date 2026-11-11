@@ -1,0 +1,44 @@
+# Site settings. Edit these and every page updates.
+title: Simon Daley-Yates
+description: >-
+  Simon Daley-Yates is a research fellow in the School of Mathematics and
+  Statistics at the University of St Andrews, studying magnetohydrodynamic
+  waves in the solar corona.
+url: https://sddyates.github.io
+baseurl: ""
+
+# Shown in the sidebar on every page.
+author:
+  name: Simon Daley-Yates
+  position: Research Fellow
+  department: School of Mathematics and Statistics
+  institution: University of St Andrews
+  location: Scotland
+  avatar: /images/avatar_me3.jpg
+  email: ""   # add an address here to show it on the site
+  orcid: 0000-0002-0461-3029
+  github: sddyates
+
+# Top navigation buttons, in order.
+nav:
+  - title: Home
+    url: /
+  - title: Research
+    url: /research.html
+  - title: Publications
+    url: /publications.html
+  - title: CV
+    url: /cv.html
+
+# How many papers to list on the home page.
+home_publications: 5
+
+markdown: kramdown
+exclude:
+  - README.md
+  - README.txt
+  - LICENSE.txt
+  - scripts/
+  - assets/sass/
+  - Gemfile
+  - Gemfile.lock

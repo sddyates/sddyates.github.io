@@ -1,0 +1,55 @@
+# "Selected Work" cards on the home page, shown in this order.
+# To add one: put a full-size image in images/fulls/ and a smaller copy
+# (same name) in images/thumbs/, then add an entry below.
+#
+#   - title:       short heading for the card
+#     image:       file name in images/fulls/ and images/thumbs/
+#     alt:         one-line description of the image, for screen readers
+#     citation:    short reference shown after the title
+#     url:         link for the reference (ADS, DOI, ...)
+#     description: a few sentences explaining the image
+
+- title: O-star radio emission
+  image: radio.jpg
+  alt: Simulated thermal radio emission from the magnetised wind of a massive star
+  citation: Daley-Yates S., Stevens I. R., ud-Doula A., 2019, MNRAS, 489, 3251
+  url: https://ui.adsabs.harvard.edu/abs/2019MNRAS.489.3251D/abstract
+  description: >-
+    Thermal radio emission generated in the wind of a 26 solar mass star. The
+    winds of these massive stars are dense, hot regions that produce bright,
+    detectable radio emission. This simulation explores the impact that
+    magnetic fields have on the emission structure of the wind.
+
+- title: Star-planet interaction
+  image: spi_acreation.jpg
+  alt: Planetary wind material following the magnetic field lines of a solar-type star
+  citation: Daley-Yates S., Stevens I. R., 2019, MNRAS, 483, 2600
+  url: https://ui.adsabs.harvard.edu/abs/2019MNRAS.483.2600D/abstract
+  description: >-
+    Planetary wind material interacting with the magnetic field of a
+    solar-type star. The plasma of the planetary wind forms arching structures
+    as it follows the magnetic field lines and is drawn down to the stellar
+    surface by the star's gravity.
+
+- title: Planetary magnetosphere
+  image: spi_radio.jpg
+  alt: Magnetosphere of a hot Jupiter embedded in the wind of its host star
+  citation: Daley-Yates S., Stevens I. R., 2018, MNRAS, 479, 1194
+  url: https://ui.adsabs.harvard.edu/abs/2018MNRAS.479.1194D/abstract
+  description: >-
+    Magnetosphere of a hot Jupiter exoplanet embedded in the wind of its host
+    star. The red stream lines show the stellar wind and the blue-red stream
+    lines the planetary magnetic field. The green cloud is the material lost
+    by the planet due to the star's intense FUV radiation.
+
+- title: Effective stellar radius as a function of observing frequency
+  image: radio_radius.jpg
+  alt: Plot of effective stellar radius against observing frequency, with and without wind acceleration
+  citation: Daley-Yates S., Stevens I. R., Crossland T. D., 2016, MNRAS, 463, 2735
+  url: https://ui.adsabs.harvard.edu/abs/2016MNRAS.463.2735D/abstract
+  description: >-
+    The effective radius of a massive star's wind, as seen by an observer, at
+    different observing frequencies. The two curves show the case when the
+    acceleration of the wind is accounted for (blue) and when it is ignored
+    (red). At higher frequencies it becomes increasingly important to account
+    for wind acceleration.

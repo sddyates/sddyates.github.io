@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<!--
+	Strata by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+{%- assign author = site.author -%}
+{%- if page.title -%}
+  {%- assign full_title = page.title | append: " | " | append: site.title -%}
+{%- else -%}
+  {%- assign full_title = site.title -%}
+{%- endif -%}
+{%- assign description = page.description | default: site.description | strip_newlines | strip -%}
+<html lang="en">
+	<head>
+		<title>{{ full_title }}</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content="{{ description | escape }}" />
+		<meta name="author" content="{{ author.name }}" />
+		<link rel="canonical" href="{{ page.url | replace: 'index.html', '' | absolute_url }}" />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="{{ full_title | escape }}" />
+		<meta property="og:description" content="{{ description | escape }}" />
+		<meta property="og:url" content="{{ page.url | replace: 'index.html', '' | absolute_url }}" />
+		<meta property="og:image" content="{{ author.avatar | absolute_url }}" />
+		<link rel="icon" href="{{ author.avatar | relative_url }}" />
+		<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
+		<link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<a href="{{ '/' | relative_url }}" class="image avatar"><img src="{{ author.avatar | relative_url }}" alt="Photo of {{ author.name }}" /></a>
+					<h1><strong>{{ author.name }}</strong><br />
+					{{ author.position }}<br />
+					{{ author.department }}<br />
+					{{ author.institution }}<br />
+					{{ author.location }}</h1>
+				</div>
+			</header>
+
+		<!-- Main -->
+			<div id="main">
+
+				<nav>
+					<ul class="actions">
+					{%- for item in site.nav %}
+						{%- if page.url == item.url %}{% assign cls = 'button primary small fit' %}{% else %}{% assign cls = 'button small fit' %}{% endif %}
+						<li><a class="{{ cls }}" href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
+					{%- endfor %}
+					</ul>
+				</nav>
+
+{{ content }}
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<ul class="icons">
+						{%- if author.email != "" %}
+						<li><a href="mailto:{{ author.email }}" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+						{%- endif %}
+						<li><a href="https://github.com/{{ author.github }}" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; {{ site.time | date: "%Y" }} {{ author.name }}</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="{{ '/assets/js/jquery.min.js' | relative_url }}"></script>
+			<script src="{{ '/assets/js/jquery.poptrox.min.js' | relative_url }}"></script>
+			<script src="{{ '/assets/js/browser.min.js' | relative_url }}"></script>
+			<script src="{{ '/assets/js/breakpoints.min.js' | relative_url }}"></script>
+			<script src="{{ '/assets/js/util.js' | relative_url }}"></script>
+			<script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+
+	</body>
+</html>

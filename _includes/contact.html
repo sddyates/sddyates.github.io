@@ -1,0 +1,10 @@
+{%- assign author = site.author -%}
+<ul class="contact-links">
+	{%- if author.email != "" %}
+	<li><span class="icon solid fa-envelope"></span> <a href="mailto:{{ author.email }}">{{ author.email }}</a></li>
+	{%- endif %}
+	<li><span class="icon solid fa-id-badge"></span> ORCID: <a href="https://orcid.org/{{ author.orcid }}">{{ author.orcid }}</a></li>
+	<li><span class="icon solid fa-book"></span> <a href="{{ site.data.publications.ads_search_url }}">Publications on NASA ADS</a></li>
+	<li><span class="icon brands fa-github"></span> <a href="https://github.com/{{ author.github }}">github.com/{{ author.github }}</a></li>
+	<li><span class="icon solid fa-map-marker-alt"></span> {{ author.department }}, {{ author.institution }}</li>
+</ul>

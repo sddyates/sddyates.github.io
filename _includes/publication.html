@@ -1,0 +1,11 @@
+{%- assign p = include.paper -%}
+<li class="pub">
+	<span class="pub-title">{% if p.ads_url %}<a href="{{ p.ads_url }}">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}</span><br />
+	<span class="pub-authors">{{ p.authors_html }}</span><br />
+	<span class="pub-meta">
+		{{ p.year }}, <em>{{ p.venue }}</em>{% if p.volume %}, {{ p.volume }}{% endif %}{% if p.page %}, {{ p.page }}{% endif %}
+		{%- if p.doi_url %} &middot; <a href="{{ p.doi_url }}">DOI</a>{% endif %}
+		{%- if p.arxiv_url %} &middot; <a href="{{ p.arxiv_url }}">arXiv</a>{% endif %}
+		{%- if p.citations > 0 %} &middot; {{ p.citations }} citation{% if p.citations != 1 %}s{% endif %}{% endif %}
+	</span>
+</li>

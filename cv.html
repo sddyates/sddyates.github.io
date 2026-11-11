@@ -1,84 +1,18 @@
-<!DOCTYPE HTML>
-<!--
-	Strata by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+---
+layout: default
+title: CV
+description: Curriculum vitae of Simon Daley-Yates.
+---
+{%- assign cv = '/documents/Simon_Daley_Yates_CV.pdf' | relative_url -%}
 
-<html>
-	<head>
-		<title>SDY - CV</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
-
-		<!-- Header -->
-			<header id="header">
-                <div class="inner">
-					<a href="index.html" class="image avatar"><img src="images/avatar_me3.jpg" alt="" /></a>
-					<h1><strong>Simon Daley-Yates</strong><br/>
-                    Research fellow<br/>
-					School of Physics and Astronomy<br/>
-                    University of St-Andrews<br/>
-				    Scotland</h1>
-				</div>
-			</header>
-
-		<!-- Main -->
-			<div id="main">
-				<!-- One -->
-					<section id="one">
-
-						<ul class="actions">
-              <li>
-                <a class="button primary small fit" href="index.html">Home</a>
-              </li>
-              <li>
-                <a class="button primary small fit" href="cv.html">CV</a>
-              </li>
-              <li>
-                <a class="button primary small fit" href="publications.html">Publications</a>
-              </li>
-              <li>
-                <a class="button primary small fit" href="research.html">Research</a>
-              </li>
-              <li>
-                <a class="button primary small fit" href="climbing.html">Climbing</a>
-              </li>
-							<li>
-                <a class="button primary small fit" href="mars.html">Mars</a>
-              </li>
-            </ul>
-
-            <embed width="100%"
-                 height="2800px"
-                 src="documents/Simon_Daley_Yates_CV.pdf"
-                 type="application/pdf">
-            </embed>
-					</section>
-			</div>
-
-		<!-- Footer -->
-			<footer id="footer">
-				<div class="inner">
-					<ul class="icons">
-						<li><a href="https://github.com/sddyates" class="icon brands fa-github"><span class="label">Github</span></a></li>
+				<section id="one">
+					<header class="major">
+						<h2>Curriculum Vitae</h2>
+					</header>
+					<ul class="actions">
+						<li><a href="{{ cv }}" class="button icon solid fa-download">Download PDF</a></li>
 					</ul>
-					<ul class="copyright">
-						<li>&copy; Simon Daley-Yates</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-					</ul>
-				</div>
-			</footer>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.poptrox.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
-</html>
+					<object class="cv-embed" data="{{ cv }}" type="application/pdf">
+						<p>Your browser can't display the PDF here. <a href="{{ cv }}">Download the CV</a> instead.</p>
+					</object>
+				</section>

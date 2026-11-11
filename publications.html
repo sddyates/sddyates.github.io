@@ -1,107 +1,41 @@
-<!DOCTYPE HTML>
-<!--
-	Strata by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>SDY - Publications</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
+---
+layout: default
+title: Publications
+description: Publications by Simon Daley-Yates, generated automatically from NASA ADS.
+---
+{%- assign pubs = site.data.publications -%}
+{%- assign refereed = pubs.papers | where: "refereed", true -%}
+{%- assign other = pubs.papers | where: "refereed", false -%}
 
-		<!-- Header -->
-			<header id="header">
-                <div class="inner">
-					<a href="index.html" class="image avatar"><img src="images/avatar_me3.jpg" alt="" /></a>
-					<h1><strong>Simon Daley-Yates</strong><br/>
-                    Research fellow<br/>
-					School of Physics and Astronomy<br/>
-                    University of St-Andrews<br/>
-				    Scotland</h1>
-				</div>
-			</header>
+				<section id="one">
+					<header class="major">
+						<h2>Publications</h2>
+					</header>
+					{%- if pubs.metrics.citations > 0 %}
+					<p class="pub-stats">
+						{{ pubs.metrics.refereed }} refereed papers ({{ pubs.metrics.first_author }} first-author)
+						&middot; {{ pubs.metrics.citations }} citations &middot; h-index {{ pubs.metrics.h_index }}
+					</p>
+					{%- endif %}
+					<p>
+						This list is generated automatically from
+						<a href="{{ pubs.ads_search_url }}">NASA ADS</a> and was last updated on
+						{{ pubs.updated | date: "%-d %B %Y" }}.
+					</p>
 
-		<!-- Main -->
-			<div id="main">
-				<!-- One -->
-					<section id="one">
-
-						<ul class="actions">
-              <li>
-                <a class="button primary small fit" href="index.html">Home</a>
-              </li>
-              <li>
-                <a class="button primary small fit" href="cv.html">CV</a>
-              </li>
-              <li>
-                <a class="button primary small fit" href="publications.html">Publications</a>
-              </li>
-              <li>
-                <a class="button primary small fit" href="research.html">Research</a>
-              </li>
-              <li>
-                <a class="button primary small fit" href="climbing.html">Climbing</a>
-              </li>
-							<li>
-                <a class="button primary small fit" href="mars.html">Mars</a>
-              </li>
-            </ul>
-
-                        <p>
-                          #6: 3D MHD simulations and synthetic radio emission from an oblique rotating magnetic massive star<br />
-                          <a href="https://ui.adsabs.harvard.edu/abs/2019MNRAS.tmp.1926D/abstract">Daley-Yates S., Stevens I. R., ud-Doula, A., 2019, MNRAS, 489, 3251</a>
-                        </p>
-
-                        <p>
-                          #5: Hot Jupiter accretion: 3D MHD simulations of star-planet wind interaction<br />
-                          <a href="https://ui.adsabs.harvard.edu/#abs/2018arXiv181200665D/abstract">Daley-Yates S., Stevens I. R., 2019, MNRAS, 483, 2600</a>
-                        </p>
-
-                        <p>
-                          #4: Inhibition of the electron cyclotron maser instability in the dense magnetosphere of a hot Jupiter<br />
-                          <a href="https://ui.adsabs.harvard.edu/#abs/2018MNRAS.479.1194D/abstract">Daley-Yates S., Stevens I. R., 2018, MNRAS, 479, 1194</a>
-                        </p>
-
-                        <p>
-                          #3: Winds of Massive Magnetic Stars: Interacting Fields and Flow<br />
-                          <a href="http://adsabs.harvard.edu/abs/2017arXiv171111287D">Daley-Yates S., Stevens I. R., 2018, Contributions of the Astronomical Observatory Skalnaté Pleso, 48, 129</a>
-                        </p>
-
-                        <p>
-                          #2: Interacting Fields and Flows: Magnetic Hot Jupiters<br />
-                          <a href="http://adsabs.harvard.edu/abs/2017AN....338..881D">Daley-Yates S., Stevens I. R., 2017, AN, 338, 881</a>
-                        </p>
-
-                        <p>
-                          #1: Submillimetre free-free emission from the winds of massive stars in the age of Atacama Large Millimeter/submillimeter Array<br />
-                          <a href="http://adsabs.harvard.edu/abs/2016MNRAS.463.2735D">Daley-Yates S., Stevens I. R., Crossland T. D., 2016, MNRAS, 463, 2735</a>
-                        </p>
-					</section>
-			</div>
-
-		<!-- Footer -->
-			<footer id="footer">
-				<div class="inner">
-					<ul class="icons">
-						<li><a href="https://github.com/sddyates" class="icon brands fa-github"><span class="label">Github</span></a></li>
+					<h3>Refereed</h3>
+					<ul class="alt pubs">
+					{%- for paper in refereed %}
+						{% include publication.html paper=paper %}
+					{%- endfor %}
 					</ul>
-					<ul class="copyright">
-						<li>&copy; Simon Daley-Yates</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+
+					{%- if other.size > 0 %}
+					<h3>Other publications</h3>
+					<ul class="alt pubs">
+					{%- for paper in other %}
+						{% include publication.html paper=paper %}
+					{%- endfor %}
 					</ul>
-				</div>
-			</footer>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.poptrox.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
-</html>
+					{%- endif %}
+				</section>

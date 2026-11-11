@@ -1,0 +1,62 @@
+/* Small additions on top of the Strata template (main.css is left unchanged). */
+
+/* Publication lists */
+ul.pubs li {
+	padding: 1em 0;
+	line-height: 1.6;
+}
+
+ul.pubs li:first-child {
+	padding-top: 0;
+}
+
+/* The theme's strong/heading grey (#787878) is dimmer than body text on the
+   dark background, so titles and my own name get a brighter grey instead. */
+.pub-title,
+.pub-title a {
+	color: #d0d0d0;
+	font-weight: 700;
+	border-bottom: 0;
+}
+
+.pub-authors strong {
+	color: #d0d0d0;
+}
+
+.pub-title a:hover {
+	color: #49bf9d !important;
+}
+
+.pub-meta {
+	font-size: 0.9em;
+}
+
+.pub-stats {
+	font-size: 0.9em;
+	font-style: italic;
+}
+
+/* Floated research images: stop a left and a right image squeezing the
+   text between them into a narrow column. */
+#main span.image.left,
+#main span.image.right {
+	clear: both;
+}
+
+/* Contact links */
+ul.contact-links {
+	list-style: none;
+	padding-left: 0;
+}
+
+ul.contact-links li {
+	padding: 0.25em 0;
+}
+
+/* CV embed */
+.cv-embed {
+	width: 100%;
+	height: 80vh;
+	min-height: 40em;
+	border: solid 1px rgba(160, 160, 160, 0.3);
+}

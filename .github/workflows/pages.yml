@@ -1,0 +1,67 @@
+# Builds and deploys the site to GitHub Pages.
+#
+# Before building, it pulls the latest publication list from NASA ADS, so the
+# Publications page stays current without any manual edits. It runs on every
+# push to master, every Monday morning, and on demand from the Actions tab.
+#
+# Requires:
+#   - Settings > Pages > Build and deployment > Source: "GitHub Actions"
+#   - Settings > Secrets and variables > Actions > repository secret ADS_TOKEN
+
+name: Build and deploy site
+
+on:
+  push:
+    branches: [master]
+  schedule:
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # If ADS is unreachable the step is marked as failed (visible in the
+      # Actions tab) but the build carries on with the committed
+      # _data/publications.json, so the site never loses its list.
+      - name: Fetch publications from NASA ADS
+        continue-on-error: true
+        env:
+          ADS_TOKEN: ${{ secrets.ADS_TOKEN }}
+        run: python scripts/update_publications.py
+
+      - uses: actions/configure-pages@v5
+
+      - name: Build with Jekyll
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site
+
+      - uses: actions/upload-pages-artifact@v3
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
