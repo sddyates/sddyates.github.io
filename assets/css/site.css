@@ -10,17 +10,12 @@ ul.pubs li:first-child {
 	padding-top: 0;
 }
 
-/* The theme's strong/heading grey (#787878) is dimmer than body text on the
-   dark background, so titles and my own name get a brighter grey instead. */
+/* Titles use the template's heading grey; my own name uses its bold style. */
 .pub-title,
 .pub-title a {
-	color: #d0d0d0;
+	color: #787878;
 	font-weight: 700;
 	border-bottom: 0;
-}
-
-.pub-authors strong {
-	color: #d0d0d0;
 }
 
 .pub-title a:hover {

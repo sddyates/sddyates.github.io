@@ -83,7 +83,7 @@ input, select, textarea {
 	}
 
 	body {
-		background: #2a2c30;
+		background: #fff;
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -206,9 +206,9 @@ input, select, textarea {
 	}
 
 	code {
-		background: #212326;
+		background: #f7f7f7;
 		border-radius: 0.35em;
-		border: solid 2px #212326;
+		border: solid 2px #efefef;
 		font-family: "Courier New", monospace;
 		font-size: 0.9em;
 		margin: 0 0.25em;
