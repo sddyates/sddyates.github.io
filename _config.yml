@@ -19,11 +19,13 @@ author:
   orcid: 0000-0002-0461-3029
   github: sddyates
 
-# Top navigation buttons, in order. Each jumps to a section of the page.
+# Sticky bar of section links, in order. Each jumps to a section of the
+# page. "short" is an optional label used on very narrow (phone) screens.
 nav:
   - title: About
     url: "#about"
   - title: Selected Work
+    short: Work
     url: "#two"
   - title: Research
     url: "#research"

@@ -48,6 +48,215 @@ ul.contact-links li {
 	padding: 0.25em 0;
 }
 
+/* Sticky section bar across the top of the content column.
+   Negative margins pull it out to the edges of #main's padding, which
+   Strata changes at each breakpoint (see main.css "#main"). */
+#nav {
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+	z-index: 100;
+	margin: -8em -4em 4em -4em;
+	padding: 0 4em;
+	background: #fff;
+	border-bottom: solid 2px #efefef;
+	/* #main has a max-width, so on wide screens carry the bar's background
+	   and bottom line on to the right edge of the window. Shadows and
+	   border-image outsets are painted only, so they never add scrolling. */
+	box-shadow: 0 0 0 100vmax #fff;
+	clip-path: inset(0 -100vmax 0 0);
+	border-image: linear-gradient(#efefef, #efefef) 0 0 1 0 / 0 0 2px 0 / 0 100vmax 0 0;
+}
+
+/* Short labels (nav "short:" in _config.yml) for very narrow screens. */
+#nav .nav-short {
+	display: none;
+}
+
+#nav ul {
+	display: flex;
+	flex-wrap: nowrap;
+	gap: 0 2.5em;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	overflow-x: auto;
+	scrollbar-width: none;
+}
+
+#nav ul::-webkit-scrollbar {
+	display: none;
+}
+
+#nav li {
+	flex: none;
+	padding: 0;
+}
+
+#nav a {
+	display: block;
+	padding: 1.6em 0 1.35em 0;
+	margin-bottom: -2px;
+	border-bottom: solid 2px transparent;
+	color: #787878;
+	font-size: 0.8em;
+	font-weight: 700;
+	letter-spacing: 0.15em;
+	text-transform: uppercase;
+	white-space: nowrap;
+}
+
+#nav a.active {
+	color: #49bf9d;
+	border-bottom-color: #49bf9d;
+}
+
+#nav a.active:hover {
+	border-bottom-color: #49bf9d;
+}
+
+/* The bar replaces the divider line above the first section. */
+#main > #nav + section {
+	border-top: 0;
+	margin-top: 0;
+	padding-top: 0;
+}
+
+/* Keep section tops clear of the bar when jumping to them. */
+#main > section {
+	scroll-margin-top: 3.5em;
+}
+
+@media screen and (max-width: 1280px) {
+	#nav {
+		margin: -6em -3em 3em -3em;
+		padding: 0 3em;
+	}
+}
+
+@media screen and (max-width: 980px) {
+	#nav {
+		margin: -6em -4em 3em -4em;
+		padding: 0 4em;
+	}
+}
+
+@media screen and (max-width: 736px) {
+	#nav {
+		margin: -2.25em -1.5em 2.25em -1.5em;
+		padding: 0 1.5em;
+	}
+
+	#nav ul {
+		gap: 0 1.5em;
+	}
+
+	#nav a {
+		padding: 1.25em 0 1.1em 0;
+		letter-spacing: 0.08em;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	#nav ul {
+		gap: 0 1.25em;
+	}
+
+	#nav a {
+		font-size: 0.75em;
+	}
+
+	#nav .nav-long.has-short {
+		display: none;
+	}
+
+	#nav .nav-short {
+		display: inline;
+	}
+}
+
+/* Interactive 3D model: still image with a launch button, replaced by the
+   viewer in an iframe on click (see site.js). */
+.model-viewer {
+	position: relative;
+	aspect-ratio: 2688 / 1566;
+	margin-bottom: 1em;
+	border: solid 2px #efefef;
+	border-radius: 0.35em;
+	overflow: hidden;
+	background: #fff;
+}
+
+.model-viewer img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: opacity 0.3s ease-in-out;
+}
+
+.model-viewer .model-launch {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	box-shadow: 0 0.25em 1em rgba(0, 0, 0, 0.2);
+}
+
+.model-viewer .model-status {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	margin: 0;
+	padding: 0.5em 1em;
+	border-radius: 0.35em;
+	background: rgba(255, 255, 255, 0.9);
+	color: #787878;
+	white-space: nowrap;
+}
+
+.model-viewer .model-status:empty {
+	display: none;
+}
+
+.model-viewer iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border: 0;
+	opacity: 0;
+	transition: opacity 0.3s ease-in-out;
+}
+
+.model-viewer.is-ready iframe {
+	opacity: 1;
+}
+
+.model-viewer.is-loading img {
+	opacity: 0.4;
+}
+
+.model-note {
+	font-size: 0.9em;
+}
+
+/* Larger profile photo in the sidebar (template default is 6.25em). */
+#header .image.avatar {
+	width: 15em;
+	max-width: 100%;
+	margin-bottom: 1.5em;
+}
+
+@media screen and (max-width: 736px) {
+	#header .image.avatar {
+		width: 12em;
+		margin-bottom: 1em;
+	}
+}
+
 /* Single-page navigation: scroll smoothly to each section. */
 html {
 	scroll-behavior: smooth;

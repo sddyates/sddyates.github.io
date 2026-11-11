@@ -35,6 +35,29 @@ layout: default
 						{% include contact.html %}
 					</section>
 
+				<!-- Interactive 3D model. The model (~30 MB) only downloads when the
+				     visitor clicks the button; until then the still image is shown.
+				     Viewer behaviour is in assets/js/site.js. -->
+					{%- assign model = '/assets/models/coronal-mhd-waves.html' | relative_url %}
+					<section id="model">
+						<h2>MHD Waves in a Global Coronal Model</h2>
+						<p>
+							A 3D global model of the solar corona (Carrington rotation 2269) with MHD waves
+							propagating through it. The volume renderings show the slow, fast and Alfv&eacute;n
+							wave modes, and the lines trace closed and open magnetic field.
+						</p>
+						<div class="model-viewer" data-model="{{ model }}" data-title="Interactive 3D model of MHD waves in the solar corona">
+							<img src="{{ '/images/model/coronal-mhd-waves.jpg' | relative_url }}" alt="3D global coronal model: the Sun with closed and open magnetic field lines and volume renderings of slow, fast and Alfv&eacute;n waves" />
+							<button type="button" class="button primary icon solid fa-cube model-launch">Launch interactive 3D model</button>
+							<p class="model-status" aria-live="polite"></p>
+						</div>
+						<p class="model-note">
+							The interactive model is about 30&nbsp;MB and works best on a desktop. Drag to
+							rotate, scroll to zoom, and use &ldquo;Show/hide&rdquo; to toggle each part.
+							<a href="{{ model }}" target="_blank" rel="noopener">Open full screen</a>
+						</p>
+					</section>
+
 				<!-- Selected work (lightbox gallery: main.js expects id="two") -->
 					<section id="two">
 						<h2>Selected Work</h2>

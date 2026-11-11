@@ -45,10 +45,17 @@
 		<!-- Main -->
 			<div id="main">
 
-				<nav>
-					<ul class="actions">
+				<!-- Sticky section bar (styles in site.css, highlighting in site.js) -->
+				<nav id="nav" aria-label="Sections">
+					<ul>
 					{%- for item in site.nav %}
-						<li><a class="button primary small fit" href="{{ item.url }}">{{ item.title }}</a></li>
+						<li><a href="{{ item.url }}">
+							{%- if item.short -%}
+							<span class="nav-long has-short">{{ item.title }}</span><span class="nav-short">{{ item.short }}</span>
+							{%- else -%}
+							{{ item.title }}
+							{%- endif -%}
+						</a></li>
 					{%- endfor %}
 					</ul>
 				</nav>
@@ -79,6 +86,7 @@
 			<script src="{{ '/assets/js/breakpoints.min.js' | relative_url }}"></script>
 			<script src="{{ '/assets/js/util.js' | relative_url }}"></script>
 			<script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+			<script src="{{ '/assets/js/site.js' | relative_url }}"></script>
 
 	</body>
 </html>
