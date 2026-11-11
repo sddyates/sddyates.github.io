@@ -48,8 +48,7 @@
 				<nav>
 					<ul class="actions">
 					{%- for item in site.nav %}
-						{%- if page.url == item.url %}{% assign cls = 'button primary small fit' %}{% else %}{% assign cls = 'button small fit' %}{% endif %}
-						<li><a class="{{ cls }}" href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
+						<li><a class="button primary small fit" href="{{ item.url }}">{{ item.title }}</a></li>
 					{%- endfor %}
 					</ul>
 				</nav>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{%- comment -%}
+	Placeholder for pages that no longer exist, so old links keep working.
+	Set `redirect_to` in the page's front matter.
+{%- endcomment -%}
+{%- assign target = page.redirect_to | relative_url -%}
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Redirecting&hellip;</title>
+		<link rel="canonical" href="{{ page.redirect_to | absolute_url }}" />
+		<meta http-equiv="refresh" content="0; url={{ target }}" />
+		<meta name="robots" content="noindex" />
+	</head>
+	<body>
+		<p>This page has moved to <a href="{{ target }}">{{ page.redirect_to | absolute_url }}</a>.</p>
+	</body>
+</html>

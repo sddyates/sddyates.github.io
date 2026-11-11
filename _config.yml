@@ -19,19 +19,16 @@ author:
   orcid: 0000-0002-0461-3029
   github: sddyates
 
-# Top navigation buttons, in order.
+# Top navigation buttons, in order. Each jumps to a section of the page.
 nav:
-  - title: Home
-    url: /
+  - title: About
+    url: "#about"
+  - title: Selected Work
+    url: "#two"
   - title: Research
-    url: /research.html
+    url: "#research"
   - title: Publications
-    url: /publications.html
-  - title: CV
-    url: /cv.html
-
-# How many papers to list on the home page.
-home_publications: 5
+    url: "#publications"
 
 markdown: kramdown
 exclude:
